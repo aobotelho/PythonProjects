@@ -106,3 +106,6 @@ ENV/
 #########################################################
 */steps.txt
 .vscode/
+*/Images/Faces/*
+*/Images/Raw\ Images/*
+*/Images/Training\ Set/*
