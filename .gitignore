@@ -111,4 +111,4 @@ ENV/
 */Images/Training\ Set/*
 */Images/Testing\ Set/*
 */userIDS.txt
-
+*/TrainedModel.yml
