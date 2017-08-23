@@ -23,6 +23,7 @@ for userID in os.listdir(dataPath):
     for faceSample in os.listdir('{}/{}/'.format(dataPath,userID)):
         IDs.append(len(userList))
         img = cv2.imread('{}/{}/{}'.format(dataPath,userID,faceSample),cv2.IMREAD_GRAYSCALE)
+        img = cv2.equalizeHist(img)
         faceList.append(img)
 
 #Training uses np.array as IDs input
