@@ -109,3 +109,6 @@ ENV/
 */Images/Faces/*
 */Images/Raw\ Images/*
 */Images/Training\ Set/*
+*/Images/Testing\ Set/*
+*/userIDS.txt
+
