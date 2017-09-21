@@ -2,7 +2,8 @@
 Created by: Andre Botelho
 Date: Aug 2017
 Based on: https://thecodacus.com/face-recognition-opencv-train-recognizer/#.WZoGr1SPJcY
-openCV Version: 3.1_contrib (installed on ubuntu 14.04 using https://github.com/rragundez/PyData/blob/master/Installation%20Steps%20for%20OpenCV%203.1.0.md)
+openCV Version: 3.1_contrib (installed on:
+- ubuntu 14.04 using https://github.com/rragundez/PyData/blob/master/Installation%20Steps%20for%20OpenCV%203.1.0.md
 '''
 
 import cv2
@@ -10,6 +11,7 @@ import cv2.face
 import numpy as np
 import os
 
+print('Version: {}'.format(cv2.__version__))
 recognizer = cv2.face.createLBPHFaceRecognizer()
 
 dataPath = './Images/Training Set'
