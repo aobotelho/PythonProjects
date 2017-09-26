@@ -6,7 +6,6 @@ Based on: http://docs.opencv.org/trunk/d7/d8b/tutorial_py_face_detection.html
 
 import cv2
 import glob
-import random
 
 recognizer = cv2.face.createLBPHFaceRecognizer()
 recognizer.load('TrainedModel.yml')
