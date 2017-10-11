@@ -12,7 +12,7 @@ import numpy as np
 import os
 
 print('Version: {}'.format(cv2.__version__))
-recognizer = cv2.face.createLBPHFaceRecognizer()
+recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 dataPath = './Images/Training Set'
 
@@ -35,7 +35,7 @@ with open('userIDS.txt','w') as file:
     file.write(str(userList))
 
 recognizer.train(faceList,IDs)
-recognizer.save('TrainedModel.yml')
+recognizer.write('TrainedModel.yml')
 
 #Finished!
 print('Finished Training!!')

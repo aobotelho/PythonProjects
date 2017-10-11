@@ -15,10 +15,9 @@ facesPath = './Images/Faces'
 
 frames = cv2.VideoCapture('videoFaces.mp4')
 counter=0
-gotFrame = True
-while(gotFrame):
+while(frames.isOpened()):
     print('New Frame! Random string: ' + str(random.randint(0,10000)))
-    gotFrame,frame = frames.read()
+    ret,frame = frames.read()
 
     cv2.imwrite('./tempVideo/{}.jpg'.format(str(counter)),frame)
     counter +=1
@@ -37,6 +36,5 @@ while(gotFrame):
     '''
 frames.release()
 cv2.destroyAllWindows()
-
 
 print('done')
