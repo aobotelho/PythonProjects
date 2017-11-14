@@ -211,6 +211,42 @@ class FaceRecognition():
         pass
     
     def recognizeVideo(self):
+        '''
+        Real Time Recognition
+        '''
+        videoName = input('What is the name of the file?')
+        frames = cv2.VideoCapture(videoName)
+        ret = 1
+        while(ret):
+            ret,frame = frames.read()
+            
+            gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+            faces = self.face_cascade.detectMultiScale(gray, 1.1, 5)
+            for (x,y,w,h) in faces:        
+                face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
+                            int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
+                gray = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
+                predictID = self.recognizer.predict(gray)
+
+                cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
+                
+                foundName = ''
+                for name,IDIndex in self.userList.items():
+                    if str(IDIndex) == str(predictID[0]):
+                        foundName = name
+                cv2.putText(\
+                frame,\
+                'ID: {} - Confidence: {}'.format(foundName,predictID[1]),\
+                (int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y)) - 2),\
+                cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,255,0))
+            cv2.imshow('Video',frame)
+            if cv2.waitKey(1) == ord('q'):
+                break
+        frames.release()
+        cv2.destroyAllWindows()
+
+        print('done')
+        pass
         pass
 
     def recognizeLive(self):

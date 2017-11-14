@@ -114,3 +114,4 @@ ENV/
 TrainedModel.yml
 *~
 Face\ Recognition/*.mp4
+MapsKey.txt
