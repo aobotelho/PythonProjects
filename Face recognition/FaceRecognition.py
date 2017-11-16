@@ -207,6 +207,7 @@ class FaceRecognition():
             for faceSample in os.listdir('{}/{}'.format(trainingSetPath,userFolder)):
                 IDs.append(int(self.userList[userFolder]))
                 img = cv2.imread('{}/{}/{}'.format(trainingSetPath,userFolder,faceSample),cv2.IMREAD_GRAYSCALE)
+                img = cv2.resize(img,(200,200), interpolation = cv2.INTER_CUBIC)
                 img = cv2.equalizeHist(img)
                 faceList.append(img)
 
@@ -234,6 +235,7 @@ class FaceRecognition():
                 face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
                             int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
                 gray = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
+                gray = cv2.resize(gray,(200,200), interpolation = cv2.INTER_CUBIC)
                 predictID = self.recognizer.predict(gray)
 
                 cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
@@ -272,6 +274,7 @@ class FaceRecognition():
                 face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
                             int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
                 gray = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
+                gray = cv2.resize(gray,(200,200), interpolation = cv2.INTER_CUBIC)
                 predictID = self.recognizer.predict(gray)
 
                 cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
@@ -307,6 +310,7 @@ class FaceRecognition():
                     face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
                                 int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
                     gray = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
+                    gray = cv2.resize(gray,(200,200), interpolation = cv2.INTER_CUBIC)
                     predictID = self.recognizer.predict(gray)
 
                     cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
