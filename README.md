@@ -30,6 +30,7 @@ The script creates and expects certain files and folders in an specific format:
 
 ## GoogleMaps folder
 This folder contains a simple script to get time and distance estimation from Google Maps. It expects a file named Cities.csv and that follow the format according the file Cities_Model.csv:
+
     - ORIGIN_CITY: City of Origin
     - ORIGIN_STATE: State of Origin
     - DESTINATION_CITY: Destination City
