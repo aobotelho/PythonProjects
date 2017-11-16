@@ -1,8 +1,7 @@
 '''
 Created by: Andre Botelho
 Date: Nov 2017
-openCV Version: 3.1_contrib (installed on:
-- ubuntu 14.04 using https://github.com/rragundez/PyData/blob/master/Installation%20Steps%20for%20OpenCV%203.1.0.md
+Needs opencv_contrib to work
 '''
 
 import cv2
@@ -17,6 +16,15 @@ trainingSetPath = './Images/Training Set'
 testingSetPath = './Images/Testing Set'
 rawImagesPath = './Images/Raw Images'
 facesPath = './Images/Faces'
+
+if not os.path.exists(trainingSetPath):
+    os.makedirs(trainingSetPath)
+if not os.path.exists(testingSetPath):
+    os.makedirs(testingSetPath)
+if not os.path.exists(rawImagesPath):
+    os.makedirs(rawImagesPath)
+if not os.path.exists(facesPath):
+    os.makedirs(facesPath)
 
 menuOptions = { '1': {'menu': 'Train Model','function':'trainModel'},
                 '2': {'menu': 'Crop Faces From Images','function':'cropFromImages'},
@@ -39,7 +47,7 @@ class FaceRecognition():
         self.recognizer = cv2.face.LBPHFaceRecognizer_create()
         if os.path.exists(self.trainedModelFileName):
             self.recognizer.read(self.trainedModelFileName)
-        
+
         if os.path.exists(self.userListFileName):
             self.userList = open(self.userListFileName,'r').read()
             self.userList = eval(self.userList) if self.userList is not '' else {}
@@ -47,7 +55,7 @@ class FaceRecognition():
             self.userList = {}
             open(self.userListFileName,'w').close()
         pass
-    
+
     def cropFromImages(self):
         '''
         This function gets all the images in the rawImagesPath folder, crop faces and store in facesPath folder
@@ -65,7 +73,7 @@ class FaceRecognition():
         pass
 
     def facesToTrainingFolder(self):
-        ''' 
+        '''
         This function gets all the images on facesPath and stores them in traingSetPath in the proper folder
         The images on facesPath folder should be in the following format: {ID} - {randomNumberOrString}.png
         '''
@@ -75,12 +83,12 @@ class FaceRecognition():
                 print('New User: {}'.format(userID))
                 self.userList[userID] = str(len(self.userList))
                 open(self.userListFileName,'w').write(str(self.userList))
-            
+
             if not os.path.exists('{}/{}'.format(trainingSetPath,userID)):
                 os.makedirs('{}/{}'.format(trainingSetPath,userID))
-            
+
             os.rename('{}/{}'.format(facesPath,image),'{}/{}/{}'.format(trainingSetPath,userID,image))
-            
+
         pass
 
     def cropFromVideo(self):
@@ -97,13 +105,13 @@ class FaceRecognition():
         if singleUser == True:
             while userID == '':
                 userID = input('Ok! What is the user name? ')
-            
+
             if userID not in self.userList:
                 self.userList[userID] = str(len(self.userList))
                 open(self.userListFileName,'w').write(str(self.userList))
             if not os.path.exists('{}/{}'.format(trainingSetPath,userID)):
                 os.mkdir('{}/{}'.format(trainingSetPath,userID))
-                
+
         else:
             print('Ok, multiple faces will be detected. I will store it in the Faces folder\n\n')
 
@@ -121,19 +129,19 @@ class FaceRecognition():
                 break
             gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
             faces = self.face_cascade.detectMultiScale(gray, 1.1, 5)
-            for (x,y,w,h) in faces:        
+            for (x,y,w,h) in faces:
                 face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
-                            int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]     
+                            int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
                 if singleUser == True:
                     cv2.imwrite('{}/{}/{} - {}.png'.format(trainingSetPath,userID,userID,str(randint(0,10000))),face)
                 else:
-                    cv2.imwrite('{}/{}.jpg'.format(facesPath,str(randint(0,10000))),face)
+                    cv2.imwrite('{}/{}.png'.format(facesPath,str(randint(0,10000))),face)
         frames.release()
         cv2.destroyAllWindows()
 
         print('done')
         pass
-    
+
     def cropFromLiveVideo(self):
         '''
         Crops image from live video (Webcam probably?)
@@ -147,13 +155,13 @@ class FaceRecognition():
         if singleUser == True:
             while userID == '':
                 userID = input('Ok! What is the user name? ')
-            
+
             if userID not in self.userList:
                 self.userList[userID] = str(len(self.userList))
                 open(self.userListFileName,'w').write(str(self.userList))
             if not os.path.exists('{}/{}'.format(trainingSetPath,userID)):
                 os.mkdir('{}/{}'.format(trainingSetPath,userID))
-                
+
         else:
             print('Ok, multiple faces will be detected. I will store it in the Faces folder\n\n')
 
@@ -161,16 +169,16 @@ class FaceRecognition():
         ret = 1
         while(ret):
             ret,frame = frames.read()
-            
+
             gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
             faces = self.face_cascade.detectMultiScale(gray, 1.1, 5)
-            for (x,y,w,h) in faces:        
+            for (x,y,w,h) in faces:
                 face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
-                            int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]     
+                            int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
                 if singleUser == True:
                     cv2.imwrite('{}/{}/{} - {}.png'.format(trainingSetPath,userID,userID,str(randint(0,10000))),face)
                 else:
-                    cv2.imwrite('{}/{}.jpg'.format(facesPath,str(randint(0,10000))),face)
+                    cv2.imwrite('{}/{}.png'.format(facesPath,str(randint(0,10000))),face)
 
                 cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
 
@@ -201,7 +209,7 @@ class FaceRecognition():
                 img = cv2.imread('{}/{}/{}'.format(trainingSetPath,userFolder,faceSample),cv2.IMREAD_GRAYSCALE)
                 img = cv2.equalizeHist(img)
                 faceList.append(img)
-            
+
         print('Read all faces. Now we are going to train the model')
         IDs = np.array(IDs)
         self.recognizer.train(faceList,IDs)
@@ -209,27 +217,27 @@ class FaceRecognition():
 
         print('Finished training model')
         pass
-    
+
     def recognizeVideo(self):
         '''
-        Real Time Recognition
+        Recognize from stored video
         '''
         videoName = input('What is the name of the file?')
         frames = cv2.VideoCapture(videoName)
         ret = 1
         while(ret):
             ret,frame = frames.read()
-            
+
             gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
             faces = self.face_cascade.detectMultiScale(gray, 1.1, 5)
-            for (x,y,w,h) in faces:        
+            for (x,y,w,h) in faces:
                 face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
                             int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
                 gray = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
                 predictID = self.recognizer.predict(gray)
 
                 cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
-                
+
                 foundName = ''
                 for name,IDIndex in self.userList.items():
                     if str(IDIndex) == str(predictID[0]):
@@ -246,29 +254,28 @@ class FaceRecognition():
         cv2.destroyAllWindows()
 
         print('done')
-        pass
         pass
 
     def recognizeLive(self):
         '''
         Real Time Recognition
         '''
-        
+
         frames = cv2.VideoCapture(0)
         ret = 1
         while(ret):
             ret,frame = frames.read()
-            
+
             gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
             faces = self.face_cascade.detectMultiScale(gray, 1.1, 5)
-            for (x,y,w,h) in faces:        
+            for (x,y,w,h) in faces:
                 face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
                             int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
                 gray = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
                 predictID = self.recognizer.predict(gray)
 
                 cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
-                
+
                 foundName = ''
                 for name,IDIndex in self.userList.items():
                     if str(IDIndex) == str(predictID[0]):
@@ -286,6 +293,40 @@ class FaceRecognition():
 
         print('done')
         pass
+    def recognizePicture(self):
+        '''
+        Recognize pictures
+        '''
+        for testingFolders in os.listdir(testingSetPath):
+            counter = 0
+            for imageName in os.listdir('{}/{}'.format(testingSetPath,testingFolders)):
+                frame = cv2.imread('{}/{}/{}'.format(testingSetPath,testingFolders,imageName))
+                gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+                faces = self.face_cascade.detectMultiScale(gray, 1.1, 5)
+                for (x,y,w,h) in faces:
+                    face = frame[int(round((1-self.extraMargin)*y)):int(round((1+self.extraMargin)*(y+h))),
+                                int(round((1-self.extraMargin)*x)):int(round((1+self.extraMargin)*(x+w)))]
+                    gray = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
+                    predictID = self.recognizer.predict(gray)
+
+                    cv2.rectangle(frame,(int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y))),(int(round((1+self.extraMargin)*(x+w))),int(round((1+self.extraMargin)*(y+h)))),(0,255,0))
+
+                    foundName = ''
+                    for name,IDIndex in self.userList.items():
+                        if str(IDIndex) == str(predictID[0]):
+                            foundName = name
+                    cv2.putText(\
+                    frame,\
+                    'ID: {} - Confidence: {}\nUser expected: {}'.format(foundName,predictID[1],testingFolders),\
+                    (int(round((1-self.extraMargin)*x)),int(round((1-self.extraMargin)*y)) - 2),\
+                    cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,255,0))
+                cv2.imshow('User: {} - {}'.format(testingFolders,str(counter)),frame)
+                counter = counter + 1
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        print('done')
+        pass
+
 if __name__ == '__main__':
     recog = FaceRecognition()
 
