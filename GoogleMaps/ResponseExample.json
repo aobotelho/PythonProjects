@@ -1,0 +1,100 @@
+[
+	{
+		"bounds": {
+			"northeast": {"lat": -33.8146729, "lng": 151.208821},
+			"southwest": {"lat": -33.8978278, "lng": 151.0012743}
+		},
+		"copyrights": "Map data ©2017 Google",
+		"legs": [
+			{
+			"arrival_time": {"text": "10:13pm", "time_zone": "Australia/Sydney", "value": 1510658013},
+			"departure_time": {"text": "9:35pm", "time_zone": "Australia/Sydney","value": 1510655759},
+			"distance": {"text": "25.8 km","value": 25781},
+			"duration": {"text": "38 mins", "value": 2254},
+			"end_address": "Parramatta NSW 2150, Australia",
+			"end_location": {"lat": -33.8146729, "lng": 151.0012743},
+			"start_address": "483 George St, Sydney NSW 2000, Australia",
+			"start_location": {"lat": -33.87362299999999, "lng": 151.206924},
+			"steps": [
+				{
+					"distance": {"text": "25.3 km","value": 25313},
+					"duration": {"text": "32 mins", "value": 1890},
+					"end_location": {"lat": -33.8175505, "lng": 151.0051335},
+					"html_instructions": "Train towards Emu Plains via Central",
+					"polyline": {
+                        "points": "b}vmEgr{y[ANbAHnAJ@?@?hDh@D?T?R?JCFAh@Kj@Uf@]b@_@b@e@LQLWLWLULUl@m@t@i@x@c@z@]d@MVI\\I~AQn@CF@hAN@?L@H?H?^Dt@LZDHBB?H@LBZF~BZv@L@@~AXd@JZHd@LLBd@NdA^PFPHb@T~A~@d@\\Sd@`@VpAbALHt@v@~@bAZ^PR^j@zAvBz@nAf@n@r@zAl@x@Xf@Xb@l@x@b@j@\\^Z\\ZZTR^Z|BbBv@j@f@`@FFFDb@`@FDJHXVNLhB~Ab@^LL^`@LJHLLNNR~@lAT\\DDh@z@`@r@r@tAj@fAHRP`@^v@l@`BVr@\\~@\\bATv@Tv@HVLf@Hb@H\\PfATxAPpAPdARbAPt@FXZpAT~@b@hBPx@BFDTJ`@DTBFNn@R~@FXFTNl@Lj@Tv@V|@Rp@Ph@j@nBRx@Nh@Ll@RfAP`A@JBJDXRv@P|@^dBDR`@rCFf@NvAL|ABp@@x@@x@@pA@|A?z@@zCAr@AZCh@GdB?F?VC|A?d@A`@Ab@Er@C`@Gh@E^CNCTI\\YlAERCJUr@Up@IX]~@Sb@O\\U`@]n@k@bA]n@KTQ^MZWt@[fAa@zAAFCH{@hDk@tBM`@i@pB[lAShAUlBKlAARClAAtA@dBBn@HtALbCLbB?F@DDf@JhADd@HbAHj@LzABfA@tAG|AGbAMpAIl@]lBc@xBQp@Ot@SrAGh@QnBGp@CbA?l@@nABn@HtAH|@ZjDNdBNtBFjBAv@CfBGpAMjBQxBOtAMpAUfBQz@S~@w@dDWhAYtAWjAIb@GTGT?Bu@bDU|@IZIX?BSr@GZGZ?@]xAk@fC]vAo@lCm@vBy@fCM`@[dAa@|AS|@AFQ~@K`AIh@If@Kt@Ef@E\\C`@Cf@Ct@Ap@An@AXAfAGnBCbA?DCvABz@?NC|@AX@tAA\\Cv@En@Gn@En@OdACXGf@EZIb@EXQh@Md@Mf@Mf@IVIVGPSz@GRI^GXOb@G\\IZ_@xAIVGVSv@]nAUx@EPETKf@Kd@Kf@Qx@?@Oh@a@|AW`AQp@GZENCDAFCHMf@IZOx@WlAOr@Kf@Qt@Sv@Sx@YhAMj@WbAOn@[fA[~@Qh@Wz@CDCDADWp@Yr@k@pA]v@_@v@e@`Ag@fAUf@CFwA`Dc@`AYj@Yd@CFU^o@dAg@v@e@v@Yf@{@~Am@fAYf@Y`@U\\[d@y@jAeAtA_@h@_AjAw@dAUZw@hA]f@a@t@Wb@[l@e@fASf@a@lAWz@a@|AUhAe@bCSjAWnAG^[bBe@~DCLI`AEXCX]fDSrBMlAIt@Iv@ObAEVWhAYdAIVw@lBKTWj@Ub@c@t@ILMRKPSVY\\c@b@m@r@MLQPOPEBMPmDzC[VcAnAGJGLOPA?_@p@Yf@KPc@bAg@fAUb@MT[b@GHY\\CBWZ[Zc@`@IJSTa@f@QV[b@_@n@Wb@c@x@]l@q@pAm@dAi@dA{@~Am@hAg@`Ak@dAu@rAUd@A@Q^EFKRIPUh@g@tAMZ[|@Qb@Wt@O`@MZ?@GRM`@Ql@U|@Mh@SdAERQr@Ib@GTK`@?FIZAFGZCNOl@Q~@UbAS`AKj@Qv@Mn@Mj@Ml@Id@Mj@GZG^GVIh@Gd@Ir@I~@Ef@Gx@A`@Cv@Ap@?|@?n@@t@Bp@Bf@Br@Fr@H|@Hv@Hx@HfAHfADz@D|@D~@Bn@Bh@Bn@@h@@l@?v@?j@CjAGdBEz@Ex@Ct@?@C\\Et@AVIp@OvA{@jEK^Gb@QvAOvAg@tEEh@IlAItAEjAEtACzACnAAhBAj@@bBDjE@lCFlBJ`BLhAPnADV@FVzAHt@DVNfA?DFd@Bh@@T@RBXBpA@zBA~AAdBA~@?DC`DClAAhDA\\E`EEpECdB?b@BhACdBEvBMdCEZI`AIh@ETId@AHMl@UbAK`@Sp@EJm@bBGRABQf@IRGNEJMTGLEF?@QXQVMTKPW\\MPUZSV[`@IHKJc@f@[XKJQNONUPOJg@\\g@\\]TA?MJo@^i@Z]TUHYNaAj@gAd@WPe@X[RkBjAqAx@uBpAgAp@_@T{@j@y@d@qAx@cAn@gAr@o@^g@X}@l@{@h@SLeA|@OJu@d@{@r@sAx@}A~@YRoBrAq@f@uB~Ac@ZYT[XCBYZ{@bAKJMNMLe@f@URc@`@kA~@ONYTIFc@b@SRm@l@SRy@z@i@j@_@`@_AbAUVc@d@q@t@YZOP]\\WZcAhA_AbAi@l@m@n@OR[\\g@h@YXQRm@n@o@p@m@n@e@d@u@t@k@j@i@l@aAhAaBtB{A~AyB`C?@iAnAk@bAiAzAKLg@v@cBtCmAtBm@bAQ^e@~@GHYj@kAlBiBtDoBrDMV_AnBu@jAeB~CyCnFyAtCMRmB`EmA~AoAdBMPiAtBcBbDoAzB{@dBJe@NYlAeCR_@@Ad@w@JQ@ANYbBeD^o@nA}B@CVi@Wh@ABoA|B_@n@cBdDq@|@EHCDY`@ML_@b@ABc@b@e@b@o@d@q@b@SJ_@PIBMDgCfAq@Tq@RmA^aDz@[FUDSDK@O?m@FgBHyBDiDMeDYoAWsBc@oCUqBCS@aABaBFkB`@oAd@a@V]RQLgAr@oA`Aa@\\OLMJa@\\{@`A]d@i@`APN"
+                    },
+					"start_location": {"lat": -33.87362299999999, "lng": 151.206924},
+					"transit_details": {
+						"arrival_stop": {
+							"location": {"lat": -33.8175505, "lng": 151.0051335},
+							"name": "Parramatta"
+						},
+						"arrival_time": {"text": "10:07pm", "time_zone": "Australia/Sydney", "value": 1510657650},
+						"departure_stop": {"location": {"lat": -33.87362299999999, "lng": 151.206924},"name": "Town Hall Station"},
+						"departure_time": {"text": "9:36pm", "time_zone": "Australia/Sydney", "value": 1510655760},
+						"headsign": "Emu Plains via Central",
+						"line": {
+							"agencies": [{"name": "Sydney Trains", "phone": "011 61 13 15 00", "url": "http://www.sydneytrains.info/"}],
+							"color": "#ffa000",
+							"name": "North Shore, Northern & Western Line",
+							"short_name": "T1",
+							"text_color": "#ffffff",
+							"vehicle": {"icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png", "local_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/au-sydney-rail.png", "name": "Train", "type": "HEAVY_RAIL"}
+						},
+						"num_stops": 6
+					},
+					"travel_mode": "TRANSIT"
+				},
+				{
+					"distance": {"text": "0.5 km", "value": 468},
+					"duration": {"text": "6 mins", "value": 362},
+					"end_location": {"lat": -33.8146729, "lng": 151.0012743},
+					"html_instructions": "Walk to Parramatta NSW 2150, Australia",
+					"polyline": {"points": "t~kmEaetx[}@lD?@Q\\IRQf@CFEVAJEZI@E@[@E?A?A?CAAACAEGSN[NMFMDIBK@UBG@IAC?A?G?YDQBC@CBA@A@A@CBKJKFMDOBG@E?E?QACVIf@Kr@[xBSzA"},
+					"start_location": {"lat": -33.8175505, "lng": 151.0051335},
+					"steps": [
+						{
+							"distance": {"text": "85 m", "value": 85},
+							"duration": {"text": "1 min", "value": 58},
+							"end_location": {"lat": -33.8169201, "lng": 151.0034428},
+							"html_instructions": "Head <b>northwest</b> on <b>Liverpool-Parramatta Transitway</b> toward <b>Church St</b>",
+							"polyline": {"points": "t~kmEaetx[}@lD?@Q\\IRQf@CFEVAJEZ"},
+							"start_location": {"lat": -33.8175505, "lng": 151.0051335},
+							"travel_mode": "WALKING"
+						},
+						{
+							"distance": {"text": "42 m", "value": 42},
+							"duration": {"text": "1 min", "value": 26},
+							"end_location": {"lat": -33.8165694, "lng": 151.0034844},
+							"html_instructions": "Turn <b>right</b> onto <b>Church St</b>",
+							"maneuver": "turn-right",
+							"polyline": {"points": "vzkmEozsx[I@E@[@E?A?A?CAAACAEG"},
+							"start_location": {"lat": -33.8169201, "lng": 151.0034428},
+							"travel_mode": "WALKING"
+						},
+						{
+							"distance": {"text": "0.2 km", "value": 183},
+							"duration": {"text": "2 mins", "value": 134}, "end_location": {"lat": -33.8150393, "lng": 151.0029224}, "html_instructions": "Turn <b>left</b> to stay on <b>Church St</b>", "maneuver": "turn-left", "polyline": {"points": "pxkmEwzsx[SN[NMFMDIBK@UBG@IAC?A?G?YDQBC@CBA@A@A@CBKJKFMDOBG@E?E?QA"}, "start_location": {"lat": -33.8165694, "lng": 151.0034844}, "travel_mode": "WALKING"
+						},
+						{
+							"distance": {"text": "0.2 km", "value": 158}, "duration": {"text": "2 mins", "value": 144}, "end_location": {"lat": -33.8146729, "lng": 151.0012743}, "html_instructions": "Turn <b>left</b> onto <b>Macquarie St</b>", "maneuver": "turn-left", "polyline": {"points": "~nkmEgwsx[CVIf@Kr@[xBSzA"}, "start_location": {"lat": -33.8150393, "lng": 151.0029224}, "travel_mode": "WALKING"
+						}
+					],
+					"travel_mode": "WALKING"
+				}
+			],
+			"traffic_speed_entry": [],
+			"via_waypoint": []
+			}
+		],
+		"overview_polyline": {
+			"points": "b}vmEgr{y[ANbAHpAJjDh@Z?^Cp@Mj@Uf@]fAeAv@wAz@cAt@i@x@c@`Bk@t@SnCUpAPb@@zB\\v@LvDh@`BZtBf@nC`AbCtAd@\\Sd@rBzAbA`AzAbBp@~@vCfEf@n@r@zAfA`BfA|A`AjAv@x@t@n@tDnCzApA|@t@lC~Bl@n@t@|@tAjBn@`AtAhCt@zAp@xAdAtCfBrFj@`CjAxHhAdFjB`Ir@~CjAnEd@zA~@hD\\vAd@hC^hBp@bDf@fDV~BPnCFbH@vECnAKnDGhEW~Ck@pCu@dCkAzC}BdE]t@e@pAcAtDgB~Gw@rCo@vCa@zDE`B?zDh@lJz@pJD|CO`DW~BaAfFa@fB[|BY`DCpBD~BRrCj@pGNtBFjBE~CU|Da@nEc@xDe@zBoAnFcAzEsAzFg@lBm@rCiA~E}AdGgAhD}@bDUdA]`Ce@nDI~@G|AGbEOpGBjAEvA?rBIfBa@~D]`Cm@vBi@hBoB`IcAvDm@hCi@hC{AzFSx@k@fCeA~EoAfFg@rBw@fCq@pB_B|DkCxFuCrGmAxBwC|EiBfDs@hAqDdFmDvEuApBy@xAaAtBu@tBy@xC{@lEk@zCc@bCy@hHcAbKi@hEq@nCaAdCc@`Ay@xAw@jAoD|DiErDkAzAy@pAe@x@kAjCc@x@c@l@qAxAm@l@u@|@m@z@w@rAaD~FuHrNm@lAgBxEgAvCg@dB}@`Eo@nCoAhGsB`Ka@|BQxAOfBIzAEhB?lBDfBFzAPpBf@`GThFJpD?bBKpDOlDU|COvA{@jESbAoAnLSbDK`DK`IFnH@lCFlBXjDVfBh@pDNlAJnAJtC?zECdDI~KQvOBlBI|ES`DSjB_@rB{@bDiAbDe@dA_@p@cA|AsAfBuAvAcA|@}B|AiBfAs@^{Az@_Bv@aAl@{JhGgF`DcF|CyBvAyAjAeAp@{@r@sAx@wBrAaDzByCzBu@n@eBnBwAxAyCfCoBlBwC|CkG~GiI`J}CdDqDtDcD~DuE`FiApAk@bAiAzAs@dAqDjG_AbBm@hAeBxCiBtDoBrDmAfCu@jAeB~CyCnFyAtC{BtE}CdEwAfCsD~G{@dBJe@|A_DTa@bAeBtEwIVi@Wh@qA`CcCtEw@fAkAxAe@f@uAhAeAn@i@TuClAcBh@oFzAq@L_@FO?m@FaFNiDMeDYcE{@oCUqBCuADaBFkB`@oAd@a@Vo@`@gAr@oA`Aq@j@o@h@yAfBi@`APN}@nD[p@Un@Gb@EZI@a@BG?KEEGSNi@Vy@NW?a@DUDIHONYLc@DQACVUzAo@tE"
+		},
+		"summary": "",
+		"warnings": [
+			"Walking directions are in beta.    Use caution – This route may be missing sidewalks or pedestrian paths."
+		],
+		"waypoint_order": []
+	}
+]

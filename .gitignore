@@ -99,3 +99,19 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+
+
+#########################################################
+*/steps.txt
+.vscode/
+*/Images/Faces/*
+*/Images/Raw\ Images/*
+*/Images/Training\ Set/*
+*/Images/Testing\ Set/*
+*/userIDS.txt
+TrainedModel.yml
+*~
+Face\ Recognition/*.mp4
+MapsKey.txt
