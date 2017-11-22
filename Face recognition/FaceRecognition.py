@@ -296,6 +296,7 @@ class FaceRecognition():
 
         print('done')
         pass
+
     def recognizePicture(self):
         '''
         Recognize pictures
